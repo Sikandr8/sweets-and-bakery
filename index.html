@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweet Shop</title>
+    <!-- GOOGLE FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ballet&family=DM+Sans&family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
+    <!-- aos animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- font awsome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+      integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div id="top-bar">
+      Sign up for 20% off your first
+      <a href="subscribe-page.html">Subscribe</a>.
+    </div>
+
+    <!-- Header and Navigation -->
+    <header>
+      <img
+        src="Copy_of_Cream_and_Brown_Modern_Cake_Shop_Logo-removebg-preview.png"
+        class="logo"
+      />
+      <nav>
+        <ul class="nav__links">
+          <li><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Pages</a>
+            <div class="dropdown-content">
+              <a
+                target="_blank"
+                href="FAQS.html"
+                onclick="smoothNavigate(event, 'FAQS.html')"
+                >FAQ'S</a
+              >
+              <a
+                href="history.html"
+                onclick="smoothNavigate(event, 'history.html')"
+                >Our History</a
+              >
+              <a href="teams.html" onclick="smoothNavigate(event, 'teams.html')"
+                >Our Team</a
+              >
+            </div>
+          </li>
+          <li>
+            <a
+              href="About-us.html"
+              onclick="smoothNavigate(event, 'About-us.html')"
+              >About Us</a
+            >
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Products</a>
+            <div class="dropdown-content">
+              <a
+                href="product,sweet.html"
+                onclick="smoothNavigate(event, 'product,sweet.html')"
+                target="_blank"
+                >Sweets</a
+              >
+              <a
+                href="product,bakery.html"
+                onclick="smoothNavigate(event, 'product,bakery.html')"
+                >Bakery</a
+              >
+            </div>
+          </li>
+          <li>
+            <a href="gift.html" onclick="smoothNavigate(event, 'gift.html')"
+              >Gift Hampers</a
+            >
+          </li>
+          <li>
+            <a
+              href="Contact.html"
+              onclick="smoothNavigate(event, 'Contact.html')"
+              >Contact Us</a
+            >
+          </li>
+          <li>
+            <a href="get-in.html" onclick="smoothNavigate(event, 'get-in.html')"
+              >Get in Touch</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="cart-container">
+         <img class="icon" src="5218600.png"alt="Cart" class="cart-icon">
+          <span class="cart-count"></span> </div>
+      <!-- <img class="icon" src="images/5218600.png" alt="" /> -->
+      <img
+        class="icon"
+        src="search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png"
+        alt=""
+      />
+    </header>
+
+    <!-- Home Section -->
+    <div class="home-section">
+      <div class="image-container">
+        <img
+          src="images__3_round_shape-removebg-preview.png"
+          alt=""
+          class="animated-round"
+        />
+        <img
+          src="images (2).jpg"
+          alt="Moving Image"
+          class="animated-image"
+        />
+        <img
+          src="photo-1611151268609-38b11dc842b0.avif"
+          class="animate-overlapping"
+        />
+        <div class="hero">
+          <h1>Exclusive Bakers & Sweets</h1>
+          <button><a href="learn-more.html">Learn More</a></button>
+          <p>Indulge in the Sweetest Treats and Baked Delights</p>
+        </div>
+        <img src="contacts-1.png" class="new-big-image" />
+      </div>
+    </div>
+
+    <!-- About Company Section -->
+    <div id="about">
+      <div class="image-banner">
+        <img
+          src="homepage_chocolate-removebg-preview.png"
+          class="logo6"
+        />
+      </div>
+      <div class="about-text">
+        <div class="text-portion">
+          <h6>About Our Company</h6>
+          <h2>We Create Incredibly Tasty Chocolate</h2>
+          <p>
+            Our mission is to provide everyone with high and useful reward for
+            his/her trading, purchase, and investment. Our goal is to make the
+            cryptocurrency market grow faster.
+          </p>
+          <h5>Alishba Shoaib</h5>
+          <p>Founder of the Company</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marquee Section -->
+    <div class="marquee">
+      <h1>Exclusive Bakers & Sweets</h1>
+    </div>
+
+    <!---------why our comany----------------->
+
+    <div id="row">
+      <div class="col-2">
+        <h6>why our company</h6>
+        <h1>how a sweet fairy world is created</h1>
+
+        <div class="boxess">
+          <img
+            src="sweetbox-removebg-preview.png"
+            style="height: 6rem"
+            class="boxx"
+          />
+          <h5>Natural Ingredients</h5>
+          <p>
+            We use only natural ingredients from international producers and
+            high-quality dyes.
+          </p>
+        </div>
+        <div class="boxess">
+          <img
+            src="caky-removebg-preview.png"
+            style="height: 6rem"
+            class="boxx"
+          />
+          <h5>Natural Ingredients</h5>
+          <p>
+            We use only natural ingredients from international producers and
+            high-quality dyes.
+          </p>
+        </div>
+        <div class="boxess">
+          <img
+            src="category--69952-1704119953-removebg-preview.png"
+            style="height: 6rem"
+            class="boxx"
+          />
+          <h5>Natural Ingredients</h5>
+          <p>
+            We use only natural ingredients from international producers and
+            high-quality dyes.
+          </p>
+        </div>
+      </div>
+
+      <img src="layer-4 chocooooo.png" alt="library" />
+    </div>
+
+    <!-- exclusive -->
+    <div id="exclusive">
+      <div class="exclusive-image">
+        <img src="homepage_2-7-removebg-preview.png" class="logo6" />
+      </div>
+      <div class="exclusive-text">
+        <div class="exclusive-portion">
+          <h6>About Our Company</h6>
+          <h2>We Create Incredibly Tasty Chocolate</h2>
+          <p>
+            Our mission is to provide everyone with high and useful reward for
+            his/her trading, purchase, and investment. Our goal is to make the
+            cryptocurrency market grow faster.
+          </p>
+          <h5>Alishba Shoaib</h5>
+          <p>Founder of the Company</p>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- featured -->
+
+    <div class="featured">
+      <div class="inner">
+        <h5>choco blog</h5>
+        <h1>our latest news</h1>
+        <div class="border"></div>
+
+        <div class="row">
+          <div class="col">
+            <div class="products">
+              <img src="choco4.avif"  />
+              <div class="name">HOW TO CHOOSE DARK CHOCOLATE</div>
+    
+             
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="products">
+              <img src="close-up-slice-mississippi-mud-pie-with-layers-chocolate-marshmallow_1234738-31191.avif" />
+              <div class="name">How to Make the Best Chocolate Cake</div>
+             
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="products">
+              <img src="choco1.avif"  />
+              <div class="name">What is the Best Kind of Chocolate to Use?</div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="contacts-1.png" alt="Product Image" class="product-image">
+      <h2 class="product-title">Product Title</h2>
+      <p class="product-price">$19.99</p>
+      <button class="add-to-cart" onclick="addToCart('Product Title', 19.99)">Add to Cart</button>
+  </div>
+  <!-- Hamburger Icon -->
+<div class="hamburger" onclick="toggleMenu()">
+  &#9776; <!-- This is the hamburger icon -->
+</div>
+
+<script>
+  function toggleMenu() {
+      const navLinks = document.querySelector('.nav__links');
+      navLinks.classList.toggle('active'); // Toggle the display of navigation links
+  }
+</script>
+
+  
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      // Smooth navigation function
+      function smoothNavigate(event, url) {
+        event.preventDefault();
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = url;
+        }, 500); // match with CSS transition duration
+      }
+
+      let cart = [];
+
+function addToCart(productTitle, productPrice) {
+    const product = { title: productTitle, price: productPrice };
+    cart.push(product);
+    alert(productTitle + " has been added to your cart!");
+    updateCart();
+}
+
+function updateCart() {
+    const cartCountElement = document.querySelector('.cart-count');
+    cartCountElement.textContent = cart.length;
+    
+    // Optionally, log the cart items to the console for debugging
+    console.log(cart);
+}
+
+
+
+    </script>
+    
+  </body>
+</html>

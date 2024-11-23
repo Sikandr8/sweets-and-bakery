@@ -1,0 +1,1470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #FCF8F4;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif; /* Ensure the font is consistent across devices */
+    font-size: 16px; /* Default font size */
+    line-height: 1.5;
+}
+
+/* Responsive font size */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px; /* Slightly smaller font on tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 12px; /* Smaller font size on smaller mobile screens */
+    }
+}
+
+
+/* ------------------top bar----------------- */
+#top-bar {
+    background-color: #8B674F;
+    color: #FFFFFF;
+    padding: 0.4rem;
+    text-align: center;
+    font-size: 1rem; /* Default font size */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    #top-bar {
+        padding: 0.6rem; /* Slightly more padding on tablets */
+        font-size: 0.9rem; /* Reduce font size on tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #top-bar {
+        padding: 0.8rem; /* More padding on small screens */
+        font-size: 0.8rem; /* Smaller font size on smaller mobile screens */
+    }
+}
+
+#top-bar a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+    #top-bar a {
+        font-size: 0.9rem; /* Smaller font size for the links on smaller screens */
+    }
+}
+
+
+/* Media queries for responsiveness */
+
+/* @media screen and (max-width:900px) {
+    #top-bar {
+        display: none;
+    }
+} */
+
+/* -----------------------navigation bar---------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    padding: 0 20px; /* Adding horizontal padding for better spacing */
+}
+
+/* On tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    header {
+        height: 80px; /* Adjust height for tablets */
+        padding: 0 15px; /* Reduce padding for better space */
+    }
+}
+
+/* On mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    header {
+        height: 70px; /* Reduce header height for small screens */
+        padding: 0 10px; /* Even smaller padding on small screens */
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: center; /* Center elements vertically when stacked */
+    }
+}
+header .logo {
+    cursor: pointer;
+    height: 18rem;
+    padding-top: 2rem;
+    max-width: 100%; /* Prevents the logo from stretching beyond its container */
+    object-fit: contain; /* Ensures the logo is contained within the space */
+}
+
+/* On tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    header .logo {
+        height: 12rem; /* Reduce the logo size on tablets */
+        padding-top: 1rem; /* Adjust padding for better spacing */
+    }
+}
+
+/* On mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    header .logo {
+        height: 8rem; /* Further reduce the logo size on small screens */
+        padding-top: 1rem; /* Consistent padding */
+    }
+}
+
+
+/* Basic Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* For tablets and mobile devices */
+@media screen and (max-width: 768px) {
+    .nav__links {
+        display: block; /* Stack navigation links vertically */
+        padding: 0;
+    }
+
+    .nav__links li {
+        display: block; /* Make each list item take a full row */
+        text-align: center; /* Center align the links */
+        padding: 10px 0; /* Add space between items */
+    }
+
+    .nav__links li a {
+        font-size: 16px; /* Adjust font size for better readability */
+    }
+
+    .nav__links li a::after {
+        width: 0; /* Remove underline effect on smaller screens */
+    }
+
+    /* Mobile menu toggle (hamburger) */
+    .hamburger {
+        display: block; /* Show the hamburger menu */
+        cursor: pointer;
+    }
+
+    .nav__links {
+        display: none; /* Hide the nav links initially */
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav__links.active {
+        display: block; /* Show links when the menu is active */
+    }
+
+    .nav__links li {
+        width: 100%; /* Ensure each link spans the full width */
+    }
+}
+
+/* For mobile devices (up to 480px) */
+@media screen and (max-width: 480px) {
+    .nav__links li a {
+        font-size: 14px; /* Adjust font size for mobile screens */
+    }
+}
+
+
+/* Existing dropdown styles */
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    /* For small screens (like tablets or mobile devices) */
+    
+    .nav__links {
+        display: none;  /* Hide the default horizontal navigation */
+        width: 100%;
+        flex-direction: column; /* Stack the links vertically */
+        align-items: center; /* Center the links */
+        background-color: #FCF8F4;  /* Set a background color */
+    }
+
+    .nav__links.active {
+        display: flex;  /* Show the nav links when the menu is active */
+    }
+
+    .dropdown-content {
+        position: relative;  /* Make dropdowns stack underneath on smaller screens */
+        box-shadow: none;  /* Remove box-shadow */
+    }
+
+    .dropdown-content a {
+        padding: 10px;  /* Adjust padding for smaller screens */
+        text-align: center;  /* Center text for smaller screens */
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none; /* Disable hover dropdown on mobile */
+    }
+    
+    /* Hamburger menu style */
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+
+    header {
+        flex-direction: column; /* Stack logo and nav vertically */
+        height: auto; /* Allow height to adjust on smaller screens */
+        align-items: center; /* Center the items */
+    }
+
+    .logo {
+        padding-top: 1rem;  /* Adjust padding for the logo */
+        height: 10rem; /* Smaller logo size for smaller screens */
+    }
+}
+
+
+
+header .icon {
+    background-color: #FCF8F4;
+    margin-right: 2rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 768px) {
+    header .icon {
+        height: 2rem; /* Reduce icon size for smaller screens */
+        width: 2rem; /* Ensure the icon remains circular */
+        margin-right: 1rem; /* Adjust spacing between the icon and other elements */
+    }
+}
+
+
+.choco {
+    height: 19rem;
+    margin-top: 5rem;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 768px) {
+    .choco {
+        height: 15rem; /* Adjust height for smaller screens */
+        margin-top: 3rem; /* Adjust margin for better spacing */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .choco {
+        height: 12rem; /* Further adjust height for very small screens */
+        margin-top: 2rem; /* Adjust margin for very small screens */
+    }
+}
+
+
+.home-section {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 768px) {
+    .home-section {
+        height: auto; /* Let the section adjust its height based on content */
+        padding: 2rem; /* Add some padding for better spacing */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home-section {
+        height: auto; /* Let the section adjust its height based on content */
+        padding: 1rem; /* Adjust padding for very small screens */
+    }
+}
+
+
+.hero {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #232323;
+    text-align: center;
+    z-index: 10;
+}
+
+.hero h1 {
+    font-family: 'Marcellus', serif;
+    font-size: 6rem; /* Large font size for desktops */
+    margin-top: 3rem;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .hero {
+        top: 10px; /* Adjust to bring text a bit closer on tablets */
+    }
+
+    .hero h1 {
+        font-size: 4rem; /* Slightly smaller text for tablets */
+    }
+
+    .hero button {
+        padding: 15px 30px; /* Smaller button size for better fit */
+        font-size: 1rem; /* Adjust font size for the button */
+    }
+
+    .hero p {
+        font-size: 14px; /* Reduce font size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        top: 5px; /* Move the text even closer for small screens */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Even smaller text for mobile devices */
+    }
+
+    .hero button {
+        padding: 12px 25px; /* Adjust padding further for small screens */
+        font-size: 0.9rem; /* Adjust font size to fit */
+    }
+
+    .hero p {
+        font-size: 12px; /* Even smaller font for mobile devices */
+    }
+}
+
+
+.new-big-image {
+    border-radius: 1rem;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: auto;
+    height: 600px;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+/* Prevent overlapping and make the image responsive */
+@media screen and (max-width: 768px) {
+    .new-big-image {
+        height: 400px; /* Reduce height for tablets */
+        width: 80%; /* Make the image smaller to fit tablet screens */
+        left: 10%; /* Center the image on the screen */
+    }
+
+    .new-big-image + .new-big-image {
+        top: 80%; /* Adjust for positioning if two images exist */
+    }
+}
+
+/* For small mobile devices */
+@media screen and (max-width: 480px) {
+    .new-big-image {
+        height: 300px; /* Further reduce image height for mobile */
+        width: 90%; /* Make the image width 90% of the screen */
+        left: 5%; /* Ensure it's centered */
+    }
+
+    .new-big-image + .new-big-image {
+        top: 90%; /* Adjust positioning to avoid overlapping */
+    }
+}
+
+
+.image-container {
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Responsive adjustments for different screen sizes */
+@media screen and (max-width: 768px) {
+    .image-container {
+        margin-top: 30px; /* Reduce margin for smaller screens */
+        height: auto; /* Allow height to adjust based on content */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .image-container {
+        margin-top: 20px; /* Even smaller margin for mobile */
+        height: auto; /* Let height adjust based on content */
+    }
+}
+
+
+/* .animated-image styles */
+.animated-image {
+    animation: moveUpDown 3s infinite;
+    margin-right: 3rem;
+    position: absolute;
+    z-index: 1;
+}
+
+/* .animate-overlapping styles */
+.animate-overlapping {
+    animation: moveUpDowN 3s infinite;
+    border-radius: 2.5rem;
+    margin-top: 3rem;
+    height: 31rem;
+    width: auto;
+    padding: 30px;
+    position: absolute;
+    z-index: 2;
+    margin-left: -2px;
+}
+
+/* Make the elements responsive */
+@media screen and (max-width: 768px) {
+    .animated-image {
+        margin-right: 2rem; /* Adjust margin for tablets */
+        height: 20rem; /* Adjust the size for smaller screens */
+        width: auto; /* Keep width flexible */
+    }
+
+    .animate-overlapping {
+        margin-top: 2rem; /* Adjust margin */
+        height: 22rem; /* Adjust height */
+        padding: 20px; /* Reduce padding */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .animated-image {
+        margin-right: 1rem; /* Smaller margin for mobile */
+        height: 15rem; /* Further reduce height for mobile */
+        width: auto; /* Keep width flexible */
+    }
+
+    .animate-overlapping {
+        margin-top: 1rem; /* Adjust margin */
+        height: 18rem; /* Further reduce height for mobile */
+        padding: 15px; /* Reduce padding more */
+    }
+}
+
+
+/* Animation for vertical movement */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animation for horizontal movement */
+@keyframes moveUpDownHorizontal {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-6px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* Default for larger screens */
+.animated-round {
+    position: absolute;
+    z-index: 0;
+    margin-left: 14rem;
+    height: 18rem;
+    width: 18rem;
+    animation: rotate 14s linear infinite;
+    border-radius: 50%;
+    transform-origin: center;
+}
+
+/* For smaller screens like tablets or mobile */
+@media (max-width: 768px) {
+    .animated-round {
+        margin-left: 10rem; /* Adjust positioning */
+        height: 12rem; /* Adjust size */
+        width: 12rem; /* Adjust size */
+    }
+}
+
+/* For even smaller screens like mobile devices */
+@media (max-width: 480px) {
+    .animated-round {
+        margin-left: 5rem; /* Adjust positioning */
+        height: 8rem; /* Adjust size */
+        width: 8rem; /* Adjust size */
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* about company */
+
+/* Default (Desktop and larger screens) */
+#aboutsession {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#about {
+    display: flex;
+    align-items: center;
+}
+
+.logo6 {
+    margin-left: 9rem;
+    height: 28rem;
+    width: auto;
+}
+
+.about-text h6 {
+    margin-top: 13rem;
+    font-size: 0.9rem;
+    font-weight: 200;
+    margin-left: 52px;
+    padding: 5px 12px;
+    line-height: 1.2;
+    color: #C19D56;
+    border-radius: 4px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    height: 2rem;
+    width: 14rem;
+    position: relative;
+}
+
+.about-text h6::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #C19D56;
+}
+
+.about-text h2 {
+    color: #232323;
+    font-weight: 200;
+    font-size: 49px;
+    font-family: 'Marcellus', serif;
+    text-transform: uppercase;
+    margin-left: 50px;
+    padding-top: 2rem;
+}
+
+#about h5 {
+    font-family: 'Ballet', cursive;
+    color: #C19D56;
+    margin-left: 3rem;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#about p {
+    font-family: 'DM Sans', sans-serif;
+    color: #232323;
+    margin-left: 52px;
+    font-size: 15px;
+    text-align: left;
+    margin-top: 1.2rem;
+    margin-bottom: 0;
+}
+
+#about h5+p {
+    margin-top: 5px;
+}
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+}
+
+.marquee h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    color: #C19D56;
+    animation: scroll 10s linear infinite;
+    font-size: 9em;
+    text-transform: uppercase;
+    font-family: 'Marcellus', serif;
+    text-align: center;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#container {
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+}
+
+#row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#row .col-2 {
+    flex-basis: 55%;
+    min-width: 300px;
+    margin-right: 3rem;
+}
+
+#row img {
+    max-width: 100%;
+    height: 30rem;
+    outline: none;
+    float: right;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+
+/* Responsive for Tablet */
+@media (max-width: 768px) {
+    #row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #row .col-2 {
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+
+    #row img {
+        height: 25rem;
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+}
+
+/* Responsive for Mobile */
+@media (max-width: 480px) {
+    #row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #row .col-2 {
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+
+    #row img {
+        height: 20rem;
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+}
+
+
+.col-2 h1 {
+    color: #232323;
+    font-size: 41px;
+    margin-left: 3rem;
+    margin-top: 2rem;
+    font-family: 'Marcellus', serif;
+    text-transform: uppercase;
+}
+
+.col-2 p {
+    margin-left: 23px;
+    color: black;
+    font-size: 23px;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* Responsive for Tablet */
+@media (max-width: 768px) {
+    .col-2 h1 {
+        font-size: 30px;
+        margin-left: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .col-2 p {
+        font-size: 18px;
+        margin-left: 1.5rem;
+        margin-top: 1rem;
+    }
+}
+
+/* Responsive for Mobile */
+@media (max-width: 480px) {
+    .col-2 h1 {
+        font-size: 24px;
+        margin-left: 1rem;
+        margin-top: 1rem;
+    }
+
+    .col-2 p {
+        font-size: 16px;
+        margin-left: 1rem;
+        margin-top: 0.8rem;
+    }
+}
+
+
+/* Responsive for Tablet */
+@media (max-width: 768px) {
+    #aboutsession {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo6 {
+        margin-left: 0;
+        height: 20rem;
+    }
+
+    .about-text h6 {
+        font-size: 0.8rem;
+        margin-left: 30px;
+        margin-top: 10rem;
+    }
+
+    .about-text h2 {
+        font-size: 35px;
+        margin-left: 30px;
+    }
+
+    #about h5 {
+        font-size: 1.5rem;
+        margin-left: 1rem;
+    }
+
+    #about p {
+        font-size: 14px;
+        margin-left: 30px;
+    }
+
+    .marquee h1 {
+        font-size: 5em;
+    }
+
+    #row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #row .col-2 {
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+
+    #row img {
+        height: 25rem;
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+    .col-2 h1 {
+        font-size: 30px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .col-2 p {
+        font-size: 18px;
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+/* Responsive for Mobile */
+/* @media (max-width: 480px) {
+    #aboutsession {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo6 {
+        margin-left: 0;
+        height: 15rem;
+    }
+
+    .about-text h6 {
+        font-size: 0.7rem;
+        margin-left: 20px;
+        margin-top: 8rem;
+    }
+
+    .about-text h2 {
+        font-size: 28px;
+        margin-left: 20px;
+    }
+
+    #about h5 {
+        font-size: 1.2rem;
+    }
+
+    #about p {
+        font-size: 13px;
+        margin-left: 20px;
+    }
+
+    .marquee h1 {
+        font-size: 4em;
+    }
+
+    #row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #row .col-2 {
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+
+    #row img {
+        height: 20rem;
+        margin-left: 0;
+    }
+
+    .col-2 h1 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .col-2 p {
+        font-size: 15px;
+        text-align: center;
+    }
+} */
+
+
+#row .btn {
+    margin-left: 59px;
+    margin-top: 3rem;
+    color: #292828;
+    cursor: pointer;
+    background-color: #cac6c6;
+    border-radius: 3px;
+    line-height: 3;
+    font-size: 1.5rem;
+}
+
+/* Responsive for Tablet */
+@media (max-width: 768px) {
+    #row .btn {
+        margin-left: 30px;
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+
+    #row .col-2 img {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    #row .col-2 h1 {
+        font-size: 32px;
+        margin-left: 0;
+    }
+}
+
+/* Responsive for Mobile */
+@media (max-width: 480px) {
+    #row .btn {
+        margin-left: 15px;
+        margin-top: 1.5rem;
+        font-size: 1.1rem;
+        padding: 8px 16px;
+    }
+
+    #row .col-2 img {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    #row .col-2 h1 {
+        font-size: 24px;
+        margin-left: 0;
+    }
+}
+
+
+/* General styles for the boxes */
+.boxess {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows the boxes to wrap on smaller screens */
+}
+
+.boxx {
+    width: 130px;
+    height: auto;
+    margin-right: 20px;
+    margin-bottom: 20px; /* Adds some space at the bottom for better spacing on smaller screens */
+}
+
+.boxess h5 {
+    font-size: 16px;
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+}
+
+.boxess p {
+    font-size: 15px;
+}
+
+/* Responsive for Tablet */
+@media (max-width: 768px) {
+    .boxx {
+        width: 100px; /* Reduce width on tablets */
+        margin-right: 15px;
+    }
+
+    .boxess h5 {
+        font-size: 14px; /* Reduce font size for heading */
+    }
+
+    .boxess p {
+        font-size: 14px; /* Reduce font size for paragraph */
+    }
+}
+
+/* Responsive for Mobile */
+@media (max-width: 480px) {
+    .boxx {
+        width: 80px; /* Reduce width on mobile */
+        margin-right: 10px;
+    }
+
+    .boxess h5 {
+        font-size: 12px; /* Further reduce font size for heading */
+    }
+
+    .boxess p {
+        font-size: 12px; /* Further reduce font size for paragraph */
+    }
+}
+
+
+/* General styles for h6 */
+#row h6 {
+    margin-top: 7rem;
+    font-size: 0.9rem;
+    font-weight: 200;
+    margin-left: 52px;
+    line-height: 1.2;
+    color: #C19D56;
+    border-radius: 4px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    height: 2rem;
+    width: 14rem;
+    position: relative;
+}
+
+#row h6::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #C19D56;
+}
+
+/* Responsive for Tablets */
+@media (max-width: 768px) {
+    #row h6 {
+        font-size: 0.8rem;  /* Slightly smaller font size on tablets */
+        margin-left: 30px;  /* Reduce left margin */
+        width: 12rem;  /* Reduce width of h6 */
+    }
+
+    #row h6::after {
+        width: 80%; /* Make the underline shorter on tablets */
+    }
+}
+
+/* Responsive for Mobile */
+@media (max-width: 480px) {
+    #row h6 {
+        font-size: 0.7rem;  /* Even smaller font size on mobile */
+        margin-left: 20px;  /* Further reduce left margin */
+        width: 10rem;  /* Reduce width of h6 on mobile */
+    }
+
+    #row h6::after {
+        width: 70%; /* Make the underline even shorter on mobile */
+    }
+}
+
+
+#aboutsession {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* exclusive */
+#exclusive {
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at top left, #C19D56, #F6C27E, #8B674F);
+    padding: 2rem; /* Add padding to give some space on small screens */
+}
+
+.logo6 {
+    margin-left: 5rem;
+    margin-top: 5rem;
+    height: 28rem;
+    width: auto;
+}
+
+/* exclusive text styles */
+.exclusive-text h6 {
+    margin-top: 7rem;
+    font-size: 0.9rem;
+    font-weight: 200;
+    margin-left: 52px;
+    padding: 5px 12px;
+    line-height: 1.2;
+    color: #8B4513;
+    border-radius: 4px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    height: 2rem;
+    width: 14rem;
+    position: relative;
+}
+
+.exclusive-text h6::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #C19D56;
+}
+
+.exclusive-text h2 {
+    color: #232323;
+    font-weight: 100;
+    font-size: 49px;
+    font-family: 'Marcellus', serif;
+    text-transform: uppercase;
+    margin-left: 50px;
+    padding-top: 1.5rem;
+}
+
+#exclusive h5 {
+    font-family: 'Ballet', cursive;
+    font-weight: 300;
+    color: #8B4513;
+    margin-left: 3rem;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#exclusive p {
+    font-family: 'DM Sans', sans-serif;
+    color: #232323;
+    margin-left: 52px;
+    font-size: 15px;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+#exclusive h5+p {
+    margin-top: 5px;
+}
+
+/* Responsive for Tablets */
+@media (max-width: 768px) {
+    #exclusive {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: center;
+        padding: 1rem;  /* Reduce padding on small screens */
+    }
+
+    .logo6 {
+        margin-left: 0;
+        margin-top: 2rem;
+        height: 20rem; /* Reduce height of the image */
+    }
+
+    .exclusive-text h6 {
+        font-size: 0.8rem;  /* Reduce font size */
+        margin-left: 0;
+        width: 12rem;  /* Reduce width of the text */
+        text-align: center;
+    }
+
+    .exclusive-text h2 {
+        font-size: 35px; /* Smaller font size for the heading */
+        margin-left: 0;  /* Center align */
+    }
+
+    #exclusive h5 {
+        margin-left: 0;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    #exclusive p {
+        margin-left: 0;
+        font-size: 14px; /* Adjust font size for smaller screens */
+        text-align: center;
+    }
+}
+
+/* Responsive for Mobile */
+@media (max-width: 480px) {
+    .logo6 {
+        margin-left: 0;
+        margin-top: 2rem;
+        height: 15rem; /* Further reduce image height on mobile */
+    }
+
+    .exclusive-text h6 {
+        font-size: 0.7rem;  /* Further reduce font size */
+        width: 10rem;  /* Reduce width on mobile */
+    }
+
+    .exclusive-text h2 {
+        font-size: 30px; /* Smaller heading size */
+    }
+
+    #exclusive h5 {
+        font-size: 1.2rem;
+    }
+
+    #exclusive p {
+        font-size: 13px; /* Reduce font size for mobile */
+    }
+}
+
+
+/* featued  */
+
+.featured {
+    padding: 40px 0px;
+    background: #f1f1f1;
+    color: #232323;
+    text-align: center;
+}
+
+.inner {
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.border {
+    width: 160px;
+    height: 5px;
+    background: #C19D56;
+    margin: 26px auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    justify-content: center;
+}
+
+.col {
+    flex: 33.33%;
+    max-width: 33.33%;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.featured {
+    background: #fff;
+    padding: 40px;
+}
+
+.featured img {
+    width: 100%;
+    height: 300px;
+    border-radius: 4px;
+}
+
+.name {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.stars {
+    color: #C19D56;
+    margin-bottom: 20px;
+}
+
+.featured h1 {
+    margin-top: 1rem;
+}
+
+.featured h5 {
+    display: flex;
+    align-items: center;
+    /* Center content vertically */
+    justify-content: center;
+    /* Center content horizontally */
+    margin-top: 4rem;
+    font-size: 0.9rem;
+    font-weight: 200;
+    line-height: 1;
+    color: #C19D56;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.featured h5::before,
+.featured h5::after {
+    content: '';
+    width: 50px;
+    height: 2px;
+    background-color: #C19D56;
+}
+
+.featured h5::before {
+    margin-right: 10px;
+    /* Space between line and text */
+    margin-left: 10px;
+    /* Adjust to create equal spacing */
+}
+
+.featured h5::after {
+    margin-left: 10px;
+    /* Space between line and text */
+    margin-right: 10px;
+    /* Adjust to create equal spacing */
+}
+
+/* Responsive for Tablets */
+@media (max-width: 768px) {
+    .row {
+        padding: 20px;
+    }
+
+    .col {
+        flex: 50%;
+        max-width: 50%;
+        padding: 10px;
+    }
+
+    .featured img {
+        height: 250px; /* Reduce image height */
+    }
+
+    .featured h5 {
+        font-size: 0.8rem; /* Reduce font size */
+    }
+
+    .featured h1 {
+        font-size: 2rem; /* Adjust heading size */
+    }
+}
+
+/* Responsive for Mobile */
+@media (max-width: 480px) {
+    .row {
+        padding: 10px;
+    }
+
+    .col {
+        flex: 100%;
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .featured img {
+        height: 200px; /* Further reduce image height */
+    }
+
+    .featured h5 {
+        font-size: 0.7rem; /* Further reduce font size */
+    }
+
+    .featured h1 {
+        font-size: 1.5rem; /* Further adjust heading size */
+    }
+}
+
+
+.product {
+    border: 1px solid #ddd;
+    padding: 16px;
+    text-align: center;
+    margin: 16px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+}
+
+.product-title {
+    font-size: 1.2em;
+    margin: 8px 0;
+    color: #333;
+}
+
+.product-price {
+    font-size: 1.1em;
+    color: #C19D56;
+}
+
+.add-to-cart {
+    background-color: #C19D56;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product img {
+    height: 19rem;
+    width: auto;
+}
+
+.add-to-cart:hover {
+    background-color: #8B674F;
+}
+
+/* Responsive for Tablets */
+@media (max-width: 768px) {
+    .product {
+        width: 45%; /* 2 products per row */
+        margin: 8px;
+    }
+}
+
+/* Responsive for Mobile */
+@media (max-width: 480px) {
+    .product {
+        width: 100%; /* 1 product per row */
+        margin: 8px 0;
+    }
+
+    .product img {
+        height: 15rem; /* Reduce image height on mobile */
+    }
+
+    .product-title {
+        font-size: 1em; /* Reduce font size for title */
+    }
+
+    .product-price {
+        font-size: 1em; /* Reduce font size for price */
+    }
+
+    .add-to-cart {
+        padding: 8px 16px; /* Reduce button size on mobile */
+    }
+}
+
+
+
+
+
+/* ye meny add kiya transition k liye, Basic fade transition */
+body {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
